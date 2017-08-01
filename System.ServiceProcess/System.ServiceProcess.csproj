@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{57186BF9-53D1-4759-814B-E239E4CA4AFC}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyRef.cs" />
+    <Compile Include="FXAssembly.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SafeServiceHandle.cs" />
+    <Compile Include="System.ServiceProcess.Design\ServiceInstallerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System.ServiceProcess.Design\ServiceInstallerDialogResult.cs" />
+    <Compile Include="System.ServiceProcess.Design\ServiceNameConverter.cs" />
+    <Compile Include="System.ServiceProcess\NativeMethods.cs" />
+    <Compile Include="System.ServiceProcess\PowerBroadcastStatus.cs" />
+    <Compile Include="System.ServiceProcess\Res.cs" />
+    <Compile Include="System.ServiceProcess\ResCategoryAttribute.cs" />
+    <Compile Include="System.ServiceProcess\ResDescriptionAttribute.cs" />
+    <Compile Include="System.ServiceProcess\SafeNativeMethods.cs" />
+    <Compile Include="System.ServiceProcess\ServiceAccount.cs" />
+    <Compile Include="System.ServiceProcess\ServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.ServiceProcess\ServiceController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.ServiceProcess\ServiceControllerPermission.cs" />
+    <Compile Include="System.ServiceProcess\ServiceControllerPermissionAccess.cs" />
+    <Compile Include="System.ServiceProcess\ServiceControllerPermissionAttribute.cs" />
+    <Compile Include="System.ServiceProcess\ServiceControllerPermissionEntry.cs" />
+    <Compile Include="System.ServiceProcess\ServiceControllerPermissionEntryCollection.cs" />
+    <Compile Include="System.ServiceProcess\ServiceControllerStatus.cs" />
+    <Compile Include="System.ServiceProcess\ServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.ServiceProcess\ServiceProcessDescriptionAttribute.cs" />
+    <Compile Include="System.ServiceProcess\ServiceProcessInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.ServiceProcess\ServiceStartMode.cs" />
+    <Compile Include="System.ServiceProcess\ServiceType.cs" />
+    <Compile Include="System.ServiceProcess\SessionChangeDescription.cs" />
+    <Compile Include="System.ServiceProcess\SessionChangeReason.cs" />
+    <Compile Include="System.ServiceProcess\TimeoutException.cs" />
+    <Compile Include="System.ServiceProcess\UnsafeNativeMethods.cs" />
+    <Compile Include="System\ExternDll.cs" />
+    <Compile Include="System\HResults.cs" />
+    <Compile Include="ThisAssembly.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.ServiceProcess.Design\ServiceInstallerDialog.resx" />
+    <EmbeddedResource Include="System.ServiceProcess\resx" />
+    <EmbeddedResource Include="System.ServiceProcess\ServiceController.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

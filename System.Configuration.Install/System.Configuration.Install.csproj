@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FB37FA38-2F97-47B3-9A8C-EED03D321658}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyRef.cs" />
+    <Compile Include="FXAssembly.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System.ComponentModel\CompModSwitches.cs" />
+    <Compile Include="System.Configuration.Install\AssemblyInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Configuration.Install\ComponentInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Configuration.Install\IManagedInstaller.cs" />
+    <Compile Include="System.Configuration.Install\InstallContext.cs" />
+    <Compile Include="System.Configuration.Install\Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Configuration.Install\InstallerCollection.cs" />
+    <Compile Include="System.Configuration.Install\InstallerParentConverter.cs" />
+    <Compile Include="System.Configuration.Install\InstallEventArgs.cs" />
+    <Compile Include="System.Configuration.Install\InstallEventHandler.cs" />
+    <Compile Include="System.Configuration.Install\InstallException.cs" />
+    <Compile Include="System.Configuration.Install\ManagedInstallerClass.cs" />
+    <Compile Include="System.Configuration.Install\NativeMethods.cs" />
+    <Compile Include="System.Configuration.Install\Res.cs" />
+    <Compile Include="System.Configuration.Install\ResCategoryAttribute.cs" />
+    <Compile Include="System.Configuration.Install\ResDescriptionAttribute.cs" />
+    <Compile Include="System.Configuration.Install\TransactedInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Configuration.Install\UninstallAction.cs" />
+    <Compile Include="System.Diagnostics\EventLogInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Diagnostics\PerformanceCounterInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Diagnostics\SerializableRegistryKey.cs" />
+    <Compile Include="System\ExternDll.cs" />
+    <Compile Include="System\HResults.cs" />
+    <Compile Include="ThisAssembly.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System.Configuration.Install\resx" />
+    <EmbeddedResource Include="System\Config.SettingsTab.bmp" />
+    <EmbeddedResource Include="System\Config.XmlSettingsStore.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
